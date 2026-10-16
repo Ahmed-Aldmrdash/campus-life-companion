@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>تحديد الموقع · موبايل</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E4FA3}a:hover{color:#163C7D}
+</style>
+</helmet>
+<div dir="rtl" style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #E9EEF3; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; color: #0F172A; overflow: hidden; position: relative">
+  <div style="height: 330px; position: relative; flex: none">
+    <svg width="390" height="330" viewBox="0 0 390 330" aria-hidden="true" style="position: absolute; inset: 0">
+      <rect width="390" height="330" fill="#E9EEF3"/>
+      <path d="M0 250 C80 230 140 270 220 245 S340 220 390 230 L390 270 C330 260 280 290 220 285 S80 275 0 300Z" fill="#CFE0F2"/>
+      <g stroke="#FFFFFF" stroke-width="12" fill="none" stroke-linecap="round"><path d="M-10 100 L400 80"/><path d="M-10 190 L400 175"/><path d="M70 -10 L100 340"/><path d="M200 -10 L190 340"/><path d="M310 -10 L340 340"/></g>
+      <g fill="#DCE3EA"><rect x="110" y="110" width="70" height="50" rx="6"/><rect x="215" y="105" width="85" height="56" rx="6"/><rect x="10" y="10" width="45" height="70" rx="6"/></g>
+      <circle cx="195" cy="150" r="36" fill="#1E4FA3" fill-opacity="0.12"/>
+      <path d="M195 152s-14-12-14-23a14 14 0 0 1 28 0c0 11-14 23-14 23z" fill="#1E4FA3"/>
+      <circle cx="195" cy="129" r="5" fill="#FFFFFF"/>
+    </svg>
+    <a href="HomeM.dc.html" aria-label="رجوع" style="position: absolute; top: 14px; inset-inline-start: 14px; width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #0F172A; box-shadow: 0 2px 10px rgba(15,23,42,0.12)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <button type="button" aria-label="موقعي الحالي" style="position: absolute; bottom: 36px; inset-inline-end: 14px; width: 48px; height: 48px; border-radius: 999px; border: none; background: #FFFFFF; display: flex; align-items: center; justify-content: center; color: #1E4FA3; box-shadow: 0 2px 10px rgba(15,23,42,0.12); cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
+  </div>
+
+  <form style="flex: 1; margin-top: -20px; background: #FFFFFF; border-radius: 24px 24px 0 0; padding: 12px 20px 24px; display: flex; flex-direction: column; gap: 16px; position: relative; box-shadow: 0 -6px 20px rgba(15,23,42,0.08)">
+    <span style="align-self: center; width: 40px; height: 4px; border-radius: 4px; background: #CBD5E1"></span>
+    <h1 style="margin: 0; font-size: 22px">رايح الجامعة منين؟</h1>
+    <div style="display: flex; flex-direction: column; gap: 0; border: 1px solid #CBD5E1; border-radius: 14px">
+      <div style="display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 14px; border-bottom: 1px solid #E2E8F0">
+        <span style="width: 10px; height: 10px; border-radius: 999px; background: #15803D; flex: none"></span>
+        <label for="from" style="position: absolute; width: 1px; height: 1px; overflow: hidden">نقطة البداية</label>
+        <input id="from" value="مدينة نصر، عباس العقاد" style="flex: 1; border: none; outline: none; font-size: 16px; font-family: inherit; min-width: 0">
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 14px; color: #334155">
+        <span style="width: 10px; height: 10px; border-radius: 3px; background: #1E4FA3; flex: none"></span>
+        جامعة السويدي للتكنولوجيا
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <button type="button" onClick="{{setCar}}" style="height: 60px; border-radius: 14px; border: 2px solid {{carBorder}}; background: {{carBg}}; font-family: inherit; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600; color: #0F172A"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-6h14l2 6v5h-2M3 13v5h2M3 13h18"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/></svg>معايا عربية</button>
+      <button type="button" onClick="{{setNoCar}}" style="height: 60px; border-radius: 14px; border: 2px solid {{noBorder}}; background: {{noBg}}; font-family: inherit; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600; color: #0F172A"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/></svg>معنديش</button>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; min-height: 48px">
+      <span style="display: flex; align-items: center; gap: 8px; font-weight: 600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>هتتحرك</span>
+      <span style="display: flex; gap: 4px; background: #F1F5F9; border-radius: 10px; padding: 3px; font-size: 14px"><span style="background: #FFFFFF; border-radius: 8px; padding: 8px 14px; font-weight: 600">دلوقتي</span><span style="padding: 8px 14px; color: #475569">وقت تاني</span></span>
+    </div>
+
+    <div style="flex: 1"></div>
+    <a href="RouteM.dc.html" style="text-decoration: none; background: #1E4FA3; color: #FFFFFF; font-weight: 600; font-size: 17px; border-radius: 14px; height: 54px; display: flex; align-items: center; justify-content: center">اعرض الطريق</a>
+  </form>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { car: true }; }
+  renderVals() {
+    const c = this.state.car;
+    return {
+      carBorder: c ? '#1E4FA3' : '#CBD5E1', carBg: c ? '#E8EEF9' : '#FFFFFF',
+      noBorder: c ? '#CBD5E1' : '#1E4FA3', noBg: c ? '#FFFFFF' : '#E8EEF9',
+      setCar: () => this.setState({ car: true }),
+      setNoCar: () => this.setState({ car: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

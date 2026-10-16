@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>الإنذارات والحظر · موبايل</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E4FA3}a:hover{color:#163C7D}
+</style>
+</helmet>
+<div dir="rtl" style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #F6F8FB; font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif; color: #0F172A; overflow: hidden">
+  <header style="height: 64px; padding: 0 12px; display: flex; align-items: center; gap: 8px; flex: none; background: #FFFFFF; border-bottom: 1px solid #E2E8F0">
+    <a href="ProfileM.dc.html" aria-label="رجوع" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #0F172A"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
+    <h1 style="margin: 0; font-size: 19px">حالة الحساب</h1>
+  </header>
+
+  <main style="flex: 1; padding: 16px; display: flex; flex-direction: column; gap: 14px; overflow: hidden">
+    <sc-if value="{{isOk}}" hint-placeholder-val="{{ false }}">
+      <section style="background: #E7F5EC; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center">
+        <span style="width: 48px; height: 48px; border-radius: 14px; background: #15803D; display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span style="display: flex; flex-direction: column"><span style="font-size: 19px; font-weight: 700; color: #14532D">حسابك سليم</span><span style="color: #14532D; font-size: 14px">مفيش أي إنذارات</span></span>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{isWarn}}" hint-placeholder-val="{{ false }}">
+      <section style="background: #FDECEC; border: 1px solid #F5C2C2; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; gap: 12px; align-items: center">
+          <span style="width: 48px; height: 48px; border-radius: 14px; background: #B91C1C; display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.5"/></svg></span>
+          <span style="display: flex; flex-direction: column"><span style="font-size: 19px; font-weight: 700; color: #7F1D1D">عندك إنذار</span><span style="color: #7F1D1D; font-size: 14px">إنذار ١ من ٣</span></span>
+        </div>
+        <div style="display: flex; gap: 6px"><span style="flex: 1; height: 8px; border-radius: 8px; background: #B91C1C"></span><span style="flex: 1; height: 8px; border-radius: 8px; background: #F5C2C2"></span><span style="flex: 1; height: 8px; border-radius: 8px; background: #F5C2C2"></span></div>
+        <div style="background: #FFFFFF; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+          <span><span style="color: #475569">السبب: </span><span style="font-weight: 600">التأخير عن معاد الرحلة</span></span>
+          <span><span style="color: #475569">بينتهي: </span><span style="font-weight: 600">بعد ٣٠ يوم من غير بلاغات</span></span>
+        </div>
+      </section>
+    </sc-if>
+
+    <sc-if value="{{isBan}}" hint-placeholder-val="{{ true }}">
+      <section style="background: #B91C1C; color: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+        <span style="width: 52px; height: 52px; border-radius: 14px; background: rgba(255,255,255,0.18); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span>
+        <span style="font-size: 22px; font-weight: 700">حسابك موقوف ٧ أيام</span>
+        <span style="color: #FEE2E2; line-height: 1.7; font-size: 15px">مش هتقدر تعرض أو تنضم لرحلات لحد ٢٢ أكتوبر. الطريق والمساعد شغالين عادي.</span>
+        <div style="background: rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+          <span><span style="color: #FEE2E2">السبب: </span><span style="font-weight: 600">٣ إنذارات خلال شهر</span></span>
+          <span><span style="color: #FEE2E2">المدة: </span><span style="font-weight: 600">١٥ إلى ٢٢ أكتوبر ٢٠٢٦</span></span>
+        </div>
+      </section>
+    </sc-if>
+
+    <section style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 4px 16px">
+      <h2 style="margin: 12px 0 4px; font-size: 16px">السجل</h2>
+      <div style="display: flex; justify-content: space-between; min-height: 48px; align-items: center; border-bottom: 1px solid #E2E8F0; font-size: 14px"><span>إنذار · تأخير</span><span style="color: #475569">١٢ أكتوبر</span></div>
+      <div style="display: flex; justify-content: space-between; min-height: 48px; align-items: center; border-bottom: 1px solid #E2E8F0; font-size: 14px"><span>إنذار · إلغاء متأخر</span><span style="color: #475569">٨ أكتوبر</span></div>
+      <div style="display: flex; justify-content: space-between; min-height: 48px; align-items: center; font-size: 14px"><span>إنذار · تأخير</span><span style="color: #475569">٣ أكتوبر</span></div>
+    </section>
+
+    <div style="flex: 1"></div>
+    <sc-if value="{{notOk}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #475569; text-align: center">التظلم مرة واحدة، والرد خلال ٤٨ ساعة</span>
+        <a href="StatusM.dc.html" style="text-decoration: none; border: 1.5px solid #1E4FA3; color: #1E4FA3; border-radius: 14px; height: 52px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 16px; background: #FFFFFF">قدّم تظلم</a>
+      </div>
+    </sc-if>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"status":{"editor":"enum","options":["ok","warning","banned"],"default":"banned"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const s = this.props.status ?? 'banned';
+    return { isOk: s === 'ok', isWarn: s === 'warning', isBan: s === 'banned', notOk: s !== 'ok' };
+  }
+}
+</script>
+</body>
+</html>
