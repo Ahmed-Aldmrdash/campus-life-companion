@@ -15,4 +15,4 @@ Each team works on its own branch inside its own folder, then opens a pull reque
 
 ## Project documents
 
-Requirements, team proposals, transport page designs and university guidelines are in [`docs/`](docs/README.md).
+Shared requirements and university guidelines are in [`docs/`](docs/README.md); each team's proposal (and the frontend designs) live on that team's branch.
