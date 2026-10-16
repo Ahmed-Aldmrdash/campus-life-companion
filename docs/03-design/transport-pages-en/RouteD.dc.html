@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Route result · Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E4FA3}a:hover{color:#163C7D}
+</style>
+</helmet>
+<div dir="ltr" style="min-height: 900px; display: flex; flex-direction: column; background: #F6F8FB; font-family: 'Inter', system-ui, sans-serif; color: #0F172A">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E2E8F0">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap">
+      <a href="HomeD.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #0F172A">
+        <span style="width: 36px; height: 36px; border-radius: 10px; background: #1E4FA3; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></svg></span>
+        <span style="font-weight: 700; font-size: 17px">Campus Life</span>
+      </a>
+      <nav style="display: flex; gap: 8px; flex: 1; flex-wrap: wrap; font-size: 15px">
+        <a href="HomeD.dc.html" style="text-decoration: none; color: #1E4FA3; font-weight: 600; background: #E8EEF9; border-radius: 10px; padding: 10px 14px">Home</a>
+        <a href="FindD.dc.html" style="text-decoration: none; color: #334155; border-radius: 10px; padding: 10px 14px">Rides</a>
+        <a href="BotD.dc.html" style="text-decoration: none; color: #334155; border-radius: 10px; padding: 10px 14px">Assistant</a>
+        <a href="ProfileD.dc.html" style="text-decoration: none; color: #334155; border-radius: 10px; padding: 10px 14px">Profile</a>
+      </nav>
+      <a href="ProfileD.dc.html" aria-label="Profile" style="width: 40px; height: 40px; border-radius: 999px; background: #CBD5E1; color: #0F172A; font-weight: 700; text-decoration: none; display: flex; align-items: center; justify-content: center">M</a>
+    </div>
+  </header>
+
+  <div style="flex: 1; display: flex; flex-wrap: wrap">
+    <section style="flex: 1 1 420px; max-width: 500px; background: #FFFFFF; border-inline-end: 1px solid #E2E8F0; padding: 28px 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+      <div style="display: flex; align-items: center; gap: 10px">
+        <a href="LocationD.dc.html" aria-label="Back" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #E2E8F0; display: flex; align-items: center; justify-content: center; color: #0F172A"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
+        <span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #475569">From Nasr City to</span><span style="font-weight: 700; font-size: 18px">Elsewedy University of Technology</span></span>
+      </div>
+
+      <div role="tablist" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; background: #F1F5F9; border-radius: 12px; padding: 4px">
+        <button type="button" role="tab" onClick="{{pickCar}}" style="height: 44px; border: none; border-radius: 10px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{carTabBg}}; color: {{carTabFg}}">By car</button>
+        <button type="button" role="tab" onClick="{{pickBus}}" style="height: 44px; border: none; border-radius: 10px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; background: {{busTabBg}}; color: {{busTabFg}}">Public transport</button>
+      </div>
+
+      <sc-if value="{{isCar}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="border: 2px solid #1E4FA3; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+            <span style="align-self: flex-start; background: #E8EEF9; color: #1E4FA3; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 4px 10px">Fastest</span>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+              <span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #475569">Time</span><span style="font-size: 24px; font-weight: 700">55 min</span></span>
+              <span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #475569">Fuel</span><span style="font-size: 24px; font-weight: 700">EGP 70</span></span>
+              <span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #475569">Distance</span><span style="font-size: 24px; font-weight: 700">48 km</span></span>
+            </div>
+            <span style="font-size: 15px; color: #334155">Via El-Moshir axis, then the Suez road · light traffic</span>
+            <span style="font-size: 13px; color: #64748B">Estimate based on 7.5 L/100 km</span>
+          </div>
+          <div style="background: #E7F5EC; border-radius: 14px; padding: 16px; display: flex; gap: 12px; align-items: center">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg>
+            <span style="flex: 1; color: #14532D; font-size: 15px">If you take 3 classmates, each pays <span style="font-weight: 700">EGP 18</span></span>
+            <a href="OfferD.dc.html" style="text-decoration: none; background: #15803D; color: #FFFFFF; font-weight: 600; border-radius: 10px; padding: 10px 14px; font-size: 14px">Offer a ride</a>
+          </div>
+          <h2 style="margin: 0; font-size: 16px; color: #475569">Other routes</h2>
+          <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid #E2E8F0; border-radius: 12px; padding: 14px 16px"><span>Via the Ring Road and Ismailia road</span><span style="color: #475569">1 h 5 min · EGP 78</span></div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isBus}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="border: 2px solid #1E4FA3; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+              <span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #475569">Time</span><span style="font-size: 24px; font-weight: 700">1 h 25 min</span></span>
+              <span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #475569">Tickets</span><span style="font-size: 24px; font-weight: 700">EGP 35</span></span>
+            </div>
+            <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+              <li style="display: flex; gap: 12px; align-items: center"><span style="width: 36px; height: 36px; border-radius: 10px; background: #F1F5F9; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4" r="2"/><path d="M10 21l2-6-3-3 1-5 4 3 3 1M9 12l-3 2"/></svg></span><span style="flex: 1">Walk to Stadium station</span><span style="color: #475569">7 min</span></li>
+              <li style="display: flex; gap: 12px; align-items: center"><span style="width: 36px; height: 36px; border-radius: 10px; background: #E8EEF9; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E4FA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14M8 21l2-4M16 21l-2-4"/></svg></span><span style="flex: 1">Metro Line 3 to Adly Mansour</span><span style="color: #475569">25 min · EGP 10</span></li>
+              <li style="display: flex; gap: 12px; align-items: center"><span style="width: 36px; height: 36px; border-radius: 10px; background: #E8EEF9; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E4FA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M7 21v-4M17 21v-4"/></svg></span><span style="flex: 1">10th of Ramadan bus to the campus gate</span><span style="color: #475569">50 min · EGP 25</span></li>
+            </ol>
+          </div>
+          <div style="background: #E7F5EC; border-radius: 14px; padding: 16px; display: flex; gap: 12px; align-items: center">
+            <span style="flex: 1; color: #14532D; font-size: 15px">3 classmates offer rides from your area</span>
+            <a href="FindD.dc.html" style="text-decoration: none; background: #15803D; color: #FFFFFF; font-weight: 600; border-radius: 10px; padding: 10px 14px; font-size: 14px">See rides</a>
+          </div>
+        </div>
+      </sc-if>
+
+      <div style="flex: 1"></div>
+      <a href="ReportD.dc.html" style="text-decoration: none; color: #475569; font-size: 14px; display: flex; align-items: center; gap: 6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>Report a problem on this route</a>
+    </section>
+
+    <div style="flex: 999 1 480px; min-width: 0; min-height: 600px; position: relative; background: #E9EEF3">
+      <svg width="100%" height="100%" viewBox="0 0 900 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0">
+        <rect width="900" height="760" fill="#E9EEF3"/>
+        <path d="M0 620 C180 580 300 660 480 600 S780 540 900 560 L900 640 C780 620 640 680 480 675 S180 660 0 710Z" fill="#CFE0F2"/>
+        <g stroke="#FFFFFF" stroke-width="18" fill="none" stroke-linecap="round"><path d="M-10 180 L910 120"/><path d="M-10 420 L910 380"/><path d="M180 -10 L250 770"/><path d="M520 -10 L480 770"/><path d="M760 -10 L820 770"/></g>
+        <g fill="#DCE3EA"><rect x="280" y="200" width="160" height="80" rx="8"/><rect x="560" y="180" width="160" height="70" rx="8"/><rect x="40" y="40" width="90" height="110" rx="8"/><rect x="560" y="440" width="160" height="90" rx="8"/></g>
+      </svg>
+      <sc-if value="{{isCar}}" hint-placeholder-val="{{ true }}">
+        <svg width="100%" height="100%" viewBox="0 0 900 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0">
+          <path d="M200 640 C230 520 220 440 330 410 S500 400 500 300 S620 160 780 100" stroke="#1E4FA3" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M200 640 C320 640 420 560 520 560 S700 420 780 100" stroke="#94A3B8" stroke-width="5" stroke-dasharray="2 10" fill="none" stroke-linecap="round"/>
+          <circle cx="200" cy="640" r="12" fill="#15803D" stroke="#FFFFFF" stroke-width="4"/>
+          <circle cx="780" cy="100" r="14" fill="#1E4FA3" stroke="#FFFFFF" stroke-width="4"/>
+        </svg>
+      </sc-if>
+      <sc-if value="{{isBus}}" hint-placeholder-val="{{ false }}">
+        <svg width="100%" height="100%" viewBox="0 0 900 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0">
+          <path d="M200 640 L250 590" stroke="#334155" stroke-width="5" stroke-dasharray="3 9" fill="none" stroke-linecap="round"/>
+          <path d="M250 590 C300 500 330 430 480 400" stroke="#1E4FA3" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M480 400 C560 380 600 220 780 100" stroke="#0F2A57" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <circle cx="200" cy="640" r="12" fill="#15803D" stroke="#FFFFFF" stroke-width="4"/>
+          <circle cx="250" cy="590" r="8" fill="#FFFFFF" stroke="#1E4FA3" stroke-width="4"/>
+          <circle cx="480" cy="400" r="8" fill="#FFFFFF" stroke="#0F2A57" stroke-width="4"/>
+          <circle cx="780" cy="100" r="14" fill="#1E4FA3" stroke="#FFFFFF" stroke-width="4"/>
+        </svg>
+      </sc-if>
+      <span style="position: absolute; left: 8px; bottom: 6px; font-size: 11px; color: #475569">© OpenStreetMap</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { mode: 'car' }; }
+  renderVals() {
+    const car = this.state.mode === 'car';
+    return {
+      isCar: car, isBus: !car,
+      carTabBg: car ? '#FFFFFF' : 'transparent', carTabFg: car ? '#0F172A' : '#475569',
+      busTabBg: car ? 'transparent' : '#FFFFFF', busTabFg: car ? '#475569' : '#0F172A',
+      pickCar: () => this.setState({ mode: 'car' }),
+      pickBus: () => this.setState({ mode: 'bus' })
+    };
+  }
+}
+</script>
+</body>
+</html>

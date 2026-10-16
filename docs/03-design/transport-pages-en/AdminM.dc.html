@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Report review · Mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E4FA3}a:hover{color:#163C7D}
+</style>
+</helmet>
+<div dir="ltr" style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #F6F8FB; font-family: 'Inter', system-ui, sans-serif; color: #0F172A; overflow: hidden">
+  <header style="background: #0F2A57; color: #FFFFFF; padding: 16px; display: flex; flex-direction: column; gap: 12px; flex: none">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <span style="display: flex; flex-direction: column"><span style="font-size: 12px; color: #CBD5E1">Admin panel</span><span style="font-size: 20px; font-weight: 700">Reports</span></span>
+      <span style="background: #B91C1C; border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600">12 pending</span>
+    </div>
+    <div style="display: flex; gap: 8px">
+      <span style="background: #FFFFFF; color: #0F2A57; border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 600">Most severe first</span>
+      <span style="border: 1px solid rgba(255,255,255,0.4); border-radius: 999px; padding: 6px 12px; font-size: 13px">Appeals · 3</span>
+    </div>
+  </header>
+
+  <main style="flex: 1; overflow: hidden; padding: 14px 12px; display: flex; flex-direction: column; gap: 12px">
+    <sc-for list="{{rows}}" as="r" hint-placeholder-count="3">
+      <article style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-weight: 700" dir="ltr">{{r.id}}</span>
+          <span style="border-radius: 999px; padding: 3px 10px; font-weight: 600; font-size: 12px; background: {{r.sevBg}}; color: {{r.sevFg}}">{{r.sev}}</span>
+        </div>
+        <span style="font-size: 14px"><span style="font-weight: 600">{{r.cat}}</span> · against {{r.who}} · {{r.ago}}</span>
+        <span style="font-size: 14px; color: #475569; line-height: 1.6">"{{r.text}}"</span>
+        <span style="font-size: 13px; color: #334155; background: #F6F8FB; border-radius: 8px; padding: 6px 10px">Model: {{r.ai}}</span>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+          <button type="button" style="height: 44px; border-radius: 10px; border: 1px solid #CBD5E1; background: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; color: #334155; cursor: pointer">Dismiss</button>
+          <button type="button" style="height: 44px; border-radius: 10px; border: 1.5px solid #B91C1C; background: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; color: #B91C1C; cursor: pointer">Warn</button>
+          <button type="button" style="height: 44px; border-radius: 10px; border: none; background: #B91C1C; font-family: inherit; font-size: 14px; font-weight: 600; color: #FFFFFF; cursor: pointer">Ban</button>
+        </div>
+      </article>
+    </sc-for>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const sev = [['#F1F5F9', '#334155'], ['#FEF3C7', '#78350F'], ['#FDECEC', '#7F1D1D']];
+    const data = [
+      { id: '#R-1042', cat: 'Reckless driving', who: 'Youssef K.', lvl: 2, sev: 'High', ago: '10 min ago', text: 'He was driving way too fast and refused to slow down.', ai: 'Warning · 92% confidence' },
+      { id: '#R-1041', cat: 'Harassment', who: 'Karim M.', lvl: 2, sev: 'High', ago: '1 hour ago', text: 'Rude messages in the chat.', ai: '7-day ban · 88% confidence' },
+      { id: '#R-1039', cat: 'Lateness', who: 'Mariam A.', lvl: 1, sev: 'Medium', ago: '3 h ago', text: 'I waited 15 minutes.', ai: 'Warning · 75% confidence' }
+    ];
+    return { rows: data.map((d) => ({ ...d, sevBg: sev[d.lvl][0], sevFg: sev[d.lvl][1] })) };
+  }
+}
+</script>
+</body>
+</html>
