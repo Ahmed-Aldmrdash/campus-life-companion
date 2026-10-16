@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Submit a report · Mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E4FA3}a:hover{color:#163C7D}
+</style>
+</helmet>
+<div dir="ltr" style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Inter', system-ui, sans-serif; color: #0F172A; overflow: hidden">
+  <header style="height: 64px; padding: 0 12px; display: flex; align-items: center; gap: 8px; flex: none; border-bottom: 1px solid #E2E8F0">
+    <a href="ChatM.dc.html" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #0F172A"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
+    <h1 style="margin: 0; font-size: 19px">Report a problem</h1>
+  </header>
+
+  <sc-if value="{{editing}}" hint-placeholder-val="{{ true }}">
+    <form style="flex: 1; padding: 14px 18px 20px; display: flex; flex-direction: column; gap: 14px; overflow: hidden">
+      <div style="display: flex; gap: 10px; align-items: center; background: #F6F8FB; border-radius: 12px; padding: 10px 12px">
+        <span style="width: 36px; height: 36px; border-radius: 999px; background: #DBEAFE; font-weight: 700; display: flex; align-items: center; justify-content: center">Y</span>
+        <span style="display: flex; flex-direction: column; font-size: 14px"><span style="font-weight: 600">Ride with Youssef Khaled</span><span style="color: #475569; font-size: 13px">Thursday · 7:15 am</span></span>
+      </div>
+      <fieldset style="border: none; margin: 0; padding: 0">
+        <legend style="font-weight: 600; font-size: 15px; margin-bottom: 10px">What's the problem?</legend>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <sc-for list="{{cats}}" as="c" hint-placeholder-count="6">
+            <button type="button" onClick="{{c.pick}}" style="height: 44px; padding: 0 14px; border-radius: 999px; font-family: inherit; font-size: 14px; cursor: pointer; border: 1.5px solid {{c.border}}; background: {{c.bg}}; color: {{c.fg}}; font-weight: 600">{{c.label}}</button>
+          </sc-for>
+        </div>
+      </fieldset>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="desc" style="font-weight: 600; font-size: 15px">Tell us briefly</label>
+        <textarea id="desc" rows="3" placeholder="What happened?" style="border: 1px solid #CBD5E1; border-radius: 12px; padding: 10px 14px; font-size: 15px; font-family: inherit; resize: none">He was driving way too fast and refused to slow down.</textarea>
+      </div>
+      <label for="up" style="height: 64px; border: 1.5px dashed #94A3B8; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #475569; font-size: 15px; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v12H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Photo or video (optional)</label>
+      <input id="up" type="file" accept="image/*,video/*" style="display: none">
+      <span style="font-size: 13px; color: #64748B; line-height: 1.6">Reports are confidential; they won't know who reported.</span>
+      <div style="flex: 1"></div>
+      <button type="button" onClick="{{send}}" style="border: none; background: #1E4FA3; color: #FFFFFF; border-radius: 14px; height: 54px; font-family: inherit; font-size: 17px; font-weight: 600; cursor: pointer; flex: none">Send report</button>
+    </form>
+  </sc-if>
+
+  <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
+    <section style="flex: 1; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center">
+      <span style="width: 64px; height: 64px; border-radius: 999px; background: #E7F5EC; display: flex; align-items: center; justify-content: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>
+      <h2 style="margin: 0; font-size: 22px">Report received</h2>
+      <p style="margin: 0; color: #475569; line-height: 1.8">Report number #R-1042. We'll review it and let you know.</p>
+      <a href="HomeM.dc.html" style="text-decoration: none; background: #1E4FA3; color: #FFFFFF; border-radius: 14px; height: 52px; padding: 0 28px; display: flex; align-items: center; font-weight: 600">Back to home</a>
+    </section>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { cat: 'speed', sent: false }; }
+  renderVals() {
+    const list = [
+      ['late', 'Late or no-show'], ['speed', 'Reckless driving'], ['harass', 'Harassment'],
+      ['price', 'Different price'], ['road', 'Problem on the route'], ['other', 'Something else']
+    ];
+    return {
+      editing: !this.state.sent, sent: this.state.sent,
+      send: () => this.setState({ sent: true }),
+      cats: list.map(([id, label]) => {
+        const on = this.state.cat === id;
+        return { label, border: on ? '#1E4FA3' : '#CBD5E1', bg: on ? '#E8EEF9' : '#FFFFFF', fg: on ? '#1E4FA3' : '#334155', pick: () => this.setState({ cat: id }) };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
