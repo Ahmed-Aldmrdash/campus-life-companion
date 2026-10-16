@@ -11,7 +11,7 @@ Graduation project: a student transport platform for SUT.
 | `security` | Security | محمود حماده |
 | `ai-data` | AI & Data | Ahmed، عمر رمضان، ابانوب، احمد شفيق، معاذ |
 
-Each team works on its own branch inside its own folder, then opens a pull request into `main`.
+Each team works on its own branch inside its own folder. Team branches are not merged into `main`: `main` holds only the shared files.
 
 ## Project documents
 
