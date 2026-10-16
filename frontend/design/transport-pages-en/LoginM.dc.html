@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Log in · Mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1E4FA3}a:hover{color:#163C7D}
+</style>
+</helmet>
+<div dir="ltr" style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Inter', system-ui, sans-serif; color: #0F172A; overflow: hidden">
+  <header style="height: 64px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; flex: none">
+    <a href="LandingM.dc.html" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #0F172A"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
+    <a href="LoginM.dc.html" style="text-decoration: none; color: #334155; font-size: 14px; border: 1px solid #CBD5E1; border-radius: 10px; padding: 0 12px; height: 44px; box-sizing: border-box; display: flex; align-items: center">A</a>
+  </header>
+  <form style="flex: 1; padding: 16px 20px 28px; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h1 style="margin: 0; font-size: 28px">Welcome back</h1>
+      <p style="margin: 0; color: #475569; font-size: 15px; line-height: 1.7">Log in with your university email and password.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <label for="em" style="font-size: 15px; font-weight: 600">University email</label>
+      <input id="em" type="email" dir="ltr" placeholder="name12345@sut.edu.eg" style="height: 52px; border: 1px solid #CBD5E1; border-radius: 12px; padding: 0 16px; font-size: 16px; font-family: inherit; text-align: left">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <label for="pw" style="font-size: 15px; font-weight: 600">Password</label>
+      <input id="pw" type="password" placeholder="••••••••" style="height: 52px; border: 1px solid #CBD5E1; border-radius: 12px; padding: 0 16px; font-size: 16px; font-family: inherit">
+      <a href="VerifyM.dc.html" style="align-self: flex-end; font-size: 14px; text-decoration: none; padding: 10px 0">Forgot password?</a>
+    </div>
+    <div style="flex: 1"></div>
+    <a href="HomeM.dc.html" style="text-decoration: none; background: #1E4FA3; color: #FFFFFF; font-weight: 600; font-size: 17px; border-radius: 14px; height: 54px; display: flex; align-items: center; justify-content: center">Log in</a>
+    <p style="margin: 0; text-align: center; color: #475569; font-size: 15px">First time? <a href="VerifyM.dc.html" style="font-weight: 600; text-decoration: none">Create account</a></p>
+  </form>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
